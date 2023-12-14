@@ -4,20 +4,28 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/1.css">
-    
+
 </head>
 <body>
+
     <% data.forEach(function(item) { %>
-    <p id="articlesTitle"><a href='http://localhost:3000/admin/<%= item.idArticle %>'><%= item.titleArticle %> </a></p>
-    <p id="articlesDescription">
+
+    <p><a href='http://localhost:3000/admin/<%= item.idArticle %>'><%= item.titleArticle %> </a></p>
+
+    <p id="description-Article">
+
         <%= item.descriptionArticle %>
+
     </p> 
+
     <% }); %>
 
     <div class="form">
-        <h2>Добавить статью</h2>
 
     <form action="http://localhost:3000/admin/addArticle" method="post"> 
+
+        <h2>Добавить статью</h2>
+
         <label for="titleArticle">Название статьи</label> 
         <input type="text" name="titleArticle" id="titleArticle" required> 
         <p>
@@ -29,8 +37,13 @@
             <input type="text" name="descriptionArticle" id="descriptionArticle">
         </p>
         <button type="submit" id="sendArticle">Создать статью</button> 
+
     </form>
+
+    </div>
+
     <script>
+
         document.querySelector("#sendArticle").onclick=function()
         {
             event.stopPropagation();
@@ -47,6 +60,8 @@
                 body: JSON.stringify(article)
             });
         }
+
         </script>
+
 </body>
 </html>

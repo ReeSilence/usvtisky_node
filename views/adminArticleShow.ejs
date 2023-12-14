@@ -4,18 +4,25 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/1.css">
-    
+
 </head>
 <body>
-    <div id="articleContent">
-        <div id="articleTitle"><%= data[0].titleArticle %></div>
-        <p id="articleText">
-            <%= data[0].textArticle %>
-        </p>
-    </div>
+
+    <div id="title-Article"><%= data[0].titleArticle %></div>
+
+    <p id="text-Article">
+
+        <%= data[0].textArticle %>
+
+     </p>
+
+
     <div class="form">
-        <h2>Изменить статью</h2>
+
         <form id="editArticleForm" action="http://localhost:3000/admin/editArticle" method="post">
+
+            <h2>Изменить статью</h2>
+
             <label for="titleArticle">Название статьи</label>
             <input type="text" name="titleArticle" id="titleArticle" required value="<%= data[0].titleArticle %>">
             <p>
@@ -28,9 +35,12 @@
             </p>
             <button type="submit" id="sendArticle">Редактировать статью</button>
             <button type="button" id="deleteArticle">Удалить статью</button>
-            <p><a href="http://localhost:3000/admin/">Вернуться к списку статей</a></p>
         </form>
+        
     </div>
+
+    <p><a href="http://localhost:3000/admin/">Вернуться к списку статей</a></p>
+
     <script>
         document.querySelector("#sendArticle").onclick = async function(event) {
             event.preventDefault();
@@ -53,7 +63,7 @@
                 if (response.ok) {
                     alert("Данные изменены");
 
-                    // Загрузка обновленных данных и их отображение на странице
+
                     const updatedDataResponse = await fetch(`http://localhost:3000/article/${article.idArticle}`);
                     const updatedData = await updatedDataResponse.text();
 
@@ -68,6 +78,7 @@
             }
         };
     </script>
+
     <script>
         document.querySelector("#deleteArticle").onclick = function(event) {
             event.preventDefault();
@@ -89,5 +100,6 @@
             }
         }
     </script>
+
 </body>
 </html>
