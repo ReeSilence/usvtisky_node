@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false }); 
 const jsonParser = express.json();
 
+//Комментарии из ветки моделей
+//Models
 //Контроллеры для админ панели
 router.get('/',adminController.getArticleAll);
 router.get('/:idArticle',adminController.getArticle);

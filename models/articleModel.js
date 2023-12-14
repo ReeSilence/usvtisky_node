@@ -1,6 +1,7 @@
 const connection = require("../mysql.js")
 
 exports.getAll=async function(req,res){ 
+    
     let arr=[];
     await connection.query("SELECT * FROM article")
     .then(data=> {
@@ -17,9 +18,10 @@ exports.getAll=async function(req,res){
     console.log("arr");
     console.log(arr); 
     return arr;
-};
 
+};
 exports.getOne=async function(req,res,idArticle){
+
     let arr=[];
     let sql="select * from article where idArticle=?";
     console.log(req);
@@ -40,4 +42,5 @@ exports.getOne=async function(req,res,idArticle){
     console.log("arr");
     console.log(arr);
     return arr;
+
 }
