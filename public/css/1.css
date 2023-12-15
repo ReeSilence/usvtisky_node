@@ -1,0 +1,38 @@
+a{
+    text-decoration: none;
+    color: #f0692f;
+    font-size: 38px;
+}
+body{
+    background-color: rgba(27, 27, 27, 0.664);
+    color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+}
+#description-Article{
+    color: white;
+    font-size: 27px;
+}
+#text-Article{
+    font-size: 27px
+}
+#title-Article{
+    color: #f0692f;
+    font-size: 38px;
+}
+form{
+    border: 2px solid rgb(163, 114, 23);
+    border-radius: 5px;
+    font-size: 20px;
+}
+.form{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+button{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+input, textarea{
+    width: 50%;
+}
